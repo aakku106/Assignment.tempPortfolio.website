@@ -158,34 +158,19 @@ main {
         backdrop-filter: blur(10px);
         border: 1px solid var(--glass-border);
         border-radius: 12px;
-
-        &:hover {
-        }
-
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         & p {
-          font-size: 1.3rem;
+          font-size: 1.6em;
           padding: 1.4rem;
           line-height: 1.7;
           color: var(--text-primary);
           /* background: transparent; */
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-          & b {
-            color: black;
-            background: transparent;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            padding: 0;
-            border-radius: 12px;
-
-            &:hover {
-              color: rgb(145, 8, 122);
-              backdrop-filter: blur(60px);
-              padding: 0.6rem;
-              border-radius: 12px;
-            }
-          }
-          &:hover {
+        }
+        &:hover {
+          & p {
+            transform: scale(1.01) translateX(-0.4rem) rotate(-1.4deg);
+            box-shadow: 0px 0px 12px rgba(5, 58, 104, 0.643);
             background: linear-gradient(
               45deg,
               #abccec35,
@@ -193,15 +178,46 @@ main {
               #6facea53,
               #5f728653
             );
-            transform: scale(1.01) translateX(-0.4rem) rotate(2.4deg);
-            box-shadow: 0px 0px 12px rgba(5, 58, 104, 0.643);
           }
+          transform: scale(1.01) translateX(-0.4rem) rotate(-1.4deg);
         }
       }
     }
 
-    /* Skills  */
-    & .skills,
+    /* Skills section */
+    & .skills {
+      background: linear-gradient(
+        45deg,
+        #abccec25,
+        #8a929b29,
+        #6facea43,
+        #5f728643
+      );
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 3rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      & p {
+        font-size: 1.4em !important;
+      }
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(
+          45deg,
+          #abccec35,
+          #8a929b39,
+          #6facea53,
+          #5f728653
+        );
+      }
+    }
+
+    /* Achievements section */
     & .achivements {
       background: linear-gradient(
         45deg,
@@ -228,6 +244,129 @@ main {
           #6facea53,
           #5f728653
         );
+      }
+
+      & .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+
+        & .achievement-card {
+          background: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.05)
+          );
+          backdrop-filter: blur(10px);
+          border: 1px solid var(--glass-border);
+          border-radius: 12px;
+          padding: 1.5rem;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              rgba(255, 255, 255, 0.1),
+              transparent
+            );
+            transition: left 0.5s;
+          }
+
+          &:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(
+              45deg,
+              rgba(255, 255, 255, 0.15),
+              rgba(255, 255, 255, 0.08)
+            );
+
+            &::before {
+              left: 100%;
+            }
+          }
+
+          &.special-award {
+            /* border: 2px solid rgba(255, 215, 0, 0.5); */
+            box-shadow: 0px 0px 12px 2px rgba(255, 215, 0, 0.5);
+
+            &:hover {
+              box-shadow: 0 0 40px 4px rgba(255, 215, 0, 0.3);
+            }
+          }
+
+          & h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+          }
+
+          & h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-accent);
+            font-weight: 500;
+            font-style: italic;
+          }
+
+          & p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            background: transparent;
+            padding: 0;
+          }
+
+          & .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #6facea, #abccec);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+
+            &:hover {
+              background: linear-gradient(135deg, #5a8bc4, #8bb8e8);
+              transform: translateY(-2px);
+              box-shadow: 0 4px 15px rgba(111, 172, 234, 0.4);
+            }
+          }
+        }
+      }
+
+      & .leadership-note {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 128, 0, 0.1),
+          rgba(0, 128, 0, 0.05)
+        );
+        border: 1px solid rgba(0, 128, 0, 0.3);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+
+        & p {
+          background: transparent;
+          padding: 0;
+          text-align: center;
+          font-size: 1.1rem;
+          margin: 0;
+        }
       }
     }
   }
@@ -314,8 +453,53 @@ p {
     padding: 2rem !important;
   }
 
+  .achievements-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+
+    & .achievement-card {
+      padding: 1rem !important;
+
+      & h3 {
+        font-size: 1.1rem !important;
+      }
+
+      & h4 {
+        font-size: 0.9rem !important;
+      }
+
+      & p {
+        font-size: 0.85rem !important;
+      }
+    }
+  }
+
+  .leadership-note {
+    padding: 1rem !important;
+
+    & p {
+      font-size: 0.95rem !important;
+    }
+  }
+
   h1 {
     font-size: 2rem;
+  }
+}
+
+b {
+  color: black;
+  /* background: transparent; */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0;
+  border-radius: 12px;
+
+  &:hover {
+    color: rgb(145, 8, 122);
+    backdrop-filter: blur(60px);
+    padding: 0.6rem;
+    border-radius: 12px;
   }
 }
 
