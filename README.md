@@ -40,8 +40,8 @@ This portfolio website was created as an assignment project featuring:
 
 - GitHub: [@aakku106](https://github.com/aakku106)
 - Main Website: [adarashagaihre.com.np](https://www.adarashagaihre.com.np/)
-- Gmail : adarasha.gaihre106@gmail.com
+- Gmail : <adarasha.gaihre106@gmail.com>
 
 ---
 
-### BSc.CSIT Student |Butwal Nepal [Nepathya College,madikram]
+### BSc.CSIT Student | Butwal Nepal | Nepathya College,madikram
